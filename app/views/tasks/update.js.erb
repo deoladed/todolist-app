@@ -31,3 +31,11 @@ function appear(elm, i, step, speed){
         elm.style.filter = 'alpha(opacity=' + opacity*100 + ')';
     }, speed);
 }
+
+
+<!-- // Flash message  -->
+$('#flashtaskdone').slideDown(function() {
+    setTimeout(function() {
+        $('#flashtaskdone').slideUp();
+    }, 800);
+});

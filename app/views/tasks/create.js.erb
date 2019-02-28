@@ -1,2 +1,9 @@
+console.log('Create task!')
 $("<%= j render 'task', task: @task %>").appendTo($('#category-<%= @task.category.id %>')).hide().slideDown(100);
 
+<!-- // Flash message  -->
+$('#flashtaskcreated').slideDown(function() {
+    setTimeout(function() {
+        $('#flashtaskcreated').slideUp();
+    }, 800);
+});

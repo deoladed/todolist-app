@@ -18,7 +18,7 @@ require 'faker'
   end
 end
 
-5.times do
+15.times do
 	Email.create(object: Faker::Hacker.say_something_smart,
 				 body: Faker::Lorem.paragraph(30)
 				)

@@ -1,6 +1,6 @@
-<h3 id='emailobject'><%= email.object %></h3>
+<h3 id='emailobject'><%= email.object %>
 <%= button_tag class:'btn btn-sm', data: {remote: true, url: email_path(email.id), method: 'DELETE'} do %>
 	<i class="fa fa-times"></i>
-<% end %>
+<% end %></h3>
 <hr>
 <p id='emailbody'><%= email.body %></p>

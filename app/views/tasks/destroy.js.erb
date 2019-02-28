@@ -30,3 +30,11 @@ function appear(elm, i, step, speed){
         elm.style.filter = 'alpha(opacity=' + opacity*100 + ')';
     }, speed);
 }
+
+
+<!-- // Flash message  -->
+$('#flashtaskdeleted').slideDown(function() {
+    setTimeout(function() {
+        $('#flashtaskdeleted').slideUp();
+    }, 800);
+});

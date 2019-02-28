@@ -3,11 +3,8 @@ console.log('indexemails');
 
 document.getElementById('showemail').scrollIntoView();
 
+$('#showemail').children().slideUp(600)
 
-$('div[id="showemail"] h3').hide(500)
-$('div[id="showemail"] hr').hide(300)
-$('div[id="showemail"] button').hide(300)
-$('div[id="showemail"] p').hide(1000)
 
 $("<%= j render 'mail', email: @email %>").appendTo($('#showemail')).hide().slideDown(300);
 

@@ -98,14 +98,16 @@ margin:auto;
 
 border: 1px solid black;
 border-radius: 5px;
-box-shadow: 0 0 5px grey;
+box-shadow: 0 0 8px grey;
 overflow:  auto;
 }
 #emailobject {
 
 }
-#emailbody {
 
+#emailbody {
+  text-align: justify;
+  text-indent: 20px;
 }
 
 .tablist {

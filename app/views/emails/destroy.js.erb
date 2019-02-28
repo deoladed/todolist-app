@@ -3,3 +3,10 @@ $('div[id="showemail"] h3').hide(500)
 $('div[id="showemail"] hr').hide(300)
 $('div[id="showemail"] button').hide(300)
 $('div[id="showemail"] p').hide(1000)
+
+<!-- // Flash message  -->
+$('#flashmessage').slideDown(function() {
+    setTimeout(function() {
+        $('#flashmessage').slideUp();
+    }, 800);
+});
