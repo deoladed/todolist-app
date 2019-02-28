@@ -76,3 +76,59 @@
   left:100px;
   border-radius:5px;
 }
+
+#showemail {
+  background-color: #F5F5F5;
+  padding: 30px 30px;
+}
+
+#listemail {
+  border-right: 1px solid black;
+  padding:30px 0;
+}
+
+#listemail h4 {
+  padding-bottom: 20px;
+}
+
+.emails {
+width:80%;
+height: 700px;
+margin:auto;
+
+border: 1px solid black;
+border-radius: 5px;
+box-shadow: 0 0 5px grey;
+overflow:  auto;
+}
+#emailobject {
+
+}
+#emailbody {
+
+}
+
+.tablist {
+  width:100%;
+  border-top: 1px solid black;
+  padding:15px;
+
+}
+
+.tablist:last-child {
+  border-bottom: 1px solid black;
+}
+
+.tablist:hover {
+  background-color: #F5F5F5;
+}
+
+.tablist a {
+text-decoration: none;
+    color:black;
+
+}
+
+.unread {
+  font-weight: bold;
+}

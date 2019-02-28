@@ -1,7 +1,14 @@
 console.log('indexemails');
-$('div[id="show"] h3').hide(500)
-$('div[id="show"] p').hide(1000)
 
-$("<%= j render 'mail', email: @email %>").appendTo($('#show')).hide().slideDown(100);
+
+document.getElementById('showemail').scrollIntoView();
+
+
+$('div[id="showemail"] h3').hide(500)
+$('div[id="showemail"] hr').hide(300)
+$('div[id="showemail"] button').hide(300)
+$('div[id="showemail"] p').hide(1000)
+
+$("<%= j render 'mail', email: @email %>").appendTo($('#showemail')).hide().slideDown(300);
 
 

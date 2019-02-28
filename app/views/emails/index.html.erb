@@ -1,13 +1,27 @@
-<div class="container">
-	<div class="row">
-		<div class="col-4" style='border-right: 1px solid black'>
-			<h1>Emails :</h1>
+
+	<div class="row emails">
+		<div class="col-4 text-center" id='listemail'>
+			<h4>Emails :</h4>
+
 			<% @emails.each do |email| %>
-				<p><%= link_to email.object, email_path(email.id), remote: true %></p>
+				<% if email.readed == false %>
+					<div class='tablist unread' id='email-<%= email.id %>'><%= link_to email.object, email_path(email.id), remote: true %></div>
+				<% else %>
+					<div class='tablist' id='email-<%= email.id %>'><%= link_to email.object, email_path(email.id), remote: true %></div>
+				<% end %>
 			<% end %>
 		</div>
-		<div class="col-8" id='show' style="background-color: grey">
-			<h1>Votre email</h1>
+		<div class="col-8 text-center" id='showemail'>
+
 		</div>
 	</div>
-</div>
+
+
+<script>
+	$('a').each (function(){
+		$(this).click(function (e) {
+			console.log('click!');
+			$(e.currentTarget).parent().removeClass("unread");
+		})
+	});
+</script>
