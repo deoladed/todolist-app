@@ -1,0 +1,7 @@
+console.log('indexemails');
+$('div[id="show"] h3').hide(500)
+$('div[id="show"] p').hide(1000)
+
+$("<%= j render 'mail', email: @email %>").appendTo($('#show')).hide().slideDown(100);
+
+

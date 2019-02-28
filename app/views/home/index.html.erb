@@ -1,0 +1,77 @@
+
+<div class='topper'>
+
+
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+</div>
+</div>
+<div class="container">
+   <!-- Tab links -->
+  <div class="tab">
+    <% @categories.each do  |category|%>
+     <button class="tablinks" onclick="openTab(event, '<%= category.id %>')"><%= category.title %></button>
+    <% end %>
+    <button class="tablinks" onclick="openTab(event, 'done')">Done!</button>
+  </div>
+
+  <!-- Tab content -->
+  <% @categories.each do  |category|%>
+
+    <div id="<%= category.id %>" class="tabcontent">
+      <h3><%= category.title %></h3>
+      <div class="card">
+        <ul id='category-<%= category.id %>'>
+          <% category.tasks.each do |task|  %>
+            <% unless task.status == true %>        
+              <li id='task-<%= task.id %>'>
+              <%= task.title  %>
+                 <% unless task.deadline.nil? %>, to read: <%= task.deadline.strftime('%D')  %><% end %>
+                 <%= button_tag class:'btn btn-sm', data: {remote: true, url: task_path(task.id), method: 'PUT' } do %> 
+                    <i class="fa fa-check"></i>
+                   <% end %>
+                  <%= button_tag class:'btn btn-sm', data: {remote: true, url: task_path(task.id), method: 'DELETE'} do %>
+                    <i class="fa fa-times"></i>
+                  <% end %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+    
+    <div id="done" class="tabcontent">
+      <h3>Well done!</h3>
+      <div class="card">
+        <ul id='category-done'>
+      <% @categories.each do  |category|%>
+          <% category.tasks.each do |task|  %>
+            <% unless task.status == false %>        
+              <li id='task-<%= task.id %>'>
+                <%= task.title  %>
+                <% unless task.deadline.nil? %>, to read: <%= task.deadline.strftime('%D')  %><% end %>
+                <%= button_tag class:'btn btn-sm', data: {remote: true, url: task_path(task.id), method: 'DELETE'} do %>
+                  <i class="fa fa-times"></i>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+  <% end %>
+        </ul>
+      </div>
+    </div>
+</div> 
+
+  <div class="container">
+    <div class="row">
+      <% @tasks.each do |task|  %>
+        <div class="card col-3">
+          <% unless task.image.nil? %>
+            <%= image_tag task.image, class: "rounded-circle" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+

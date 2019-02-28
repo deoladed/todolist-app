@@ -1,0 +1,10 @@
+<li id='task-<%= task.id %>'>
+	<%= task.title  %>
+	<% unless task.deadline.nil? %>, to read: <%= task.deadline.strftime('%D')  %><% end %>
+		<%= button_tag class:'btn btn-sm', data: {remote: true, url: url_for(controller: :tasks, action: :update, id: task.id), method: "PUT", params: 'task'} do %> 
+			<i class="fa fa-check"></i>
+		<% end %>
+		<%= button_tag class:'btn btn-sm', data: {remote: true, url: url_for(controller: :tasks, action: :destroy, id: task.id), method: 'DELETE', params: 'delete'} do %>
+			<i class="fa fa-times"></i>
+		<% end %>
+</li>

@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-4" style='border-right: 1px solid black'>
+			<h1>Emails :</h1>
+			<% @emails.each do |email| %>
+				<p><%= link_to email.object, email_path(email.id), remote: true %></p>
+			<% end %>
+		</div>
+		<div class="col-8" id='show' style="background-color: grey">
+			<h1>Votre email</h1>
+		</div>
+	</div>
+</div>
